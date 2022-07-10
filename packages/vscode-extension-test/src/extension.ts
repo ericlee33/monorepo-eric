@@ -2,24 +2,31 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "vscode-extension-test" is now active!');
+  vscode.languages.registerHoverProvider(
+    'javascript',
+    new (class implements vscode.HoverProvider {
+      provideHover(
+        _document: vscode.TextDocument,
+        _position: vscode.Position,
+        _token: vscode.CancellationToken
+      ): vscode.ProviderResult<vscode.Hover> {
+        const commentCommandUri = vscode.Uri.parse(
+          `command:editor.action.addCommentLine`
+        );
+        const contents = new vscode.MarkdownString(
+          `[Add comment](${commentCommandUri})`
+        );
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('vscode-extension-test.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from vscode-extension-test!');
-	});
+        // command URIs如果想在Markdown 内容中生效, 你必须设置`isTrusted`。
+        // 当创建可信的Markdown 字符, 请合理地清理所有的输入内容
+        // 以便你期望的命令command URIs生效
+        contents.isTrusted = true;
 
-	context.subscriptions.push(disposable);
+        return new vscode.Hover(contents);
+      }
+    })()
+  );
 }
 
 // this method is called when your extension is deactivated
