@@ -10,16 +10,30 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vscode-extension-test.helloWorld"
+    "onView:vs-sidebar-view"
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "vscode-extension-test.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vs-sidebar-view",
+          "title": "CNODE 社区",
+          "icon": "media/mail.png"
+        }
+      ]
+    },
+    "views": {
+      "vs-sidebar-view": [
+        {
+          "type": "webview",
+          "id": "vs-sidebar-view",
+          "name": "Topic 列表",
+          "icon": "media/banana.svg",
+          "contextualTitle": "Topic 列表"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
