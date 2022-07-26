@@ -1,18 +1,17 @@
+// .vscode/launch.json
 {
-  "version": "1.0.0",
+  "version": "0.2.0",
   "configurations": [
+    // Default launch configuration for VSCode Jest extension
     {
+      "name": "vscode-jest-tests",
       "type": "node",
       "request": "launch",
-      "name": "Jest: current file",
-      //"env": { "NODE_ENV": "test" },
-      "program": "${workspaceFolder}/node_modules/.bin/jest",
-      // "args": ["${fileBasenameNoExtension}", "--config", "jest.config.js"],
       "console": "integratedTerminal",
-      "disableOptimisticBPs": true,
-      "windows": {
-        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
-      }
+      "internalConsoleOptions": "neverOpen",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+      "cwd": "${workspaceFolder}",
+      "args": ["--runInBand", "--watchAll=false"]
     }
   ]
 }

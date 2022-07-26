@@ -9,7 +9,6 @@ describe('func', () => {
       .fn(() => 'default')
       .mockImplementationOnce(() => 'first call')
       .mockImplementationOnce(() => 'second call');
-    debugger;
     console.log(myMockFn(), myMockFn(), myMockFn(), myMockFn());
     // 当 mockImplementationOne定义的实现逐个调用完毕时， 如果定义了jest.fn ，它将使用 jest.fn 。
   });
