@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="xport">Export</button>
+    <script src="https://unpkg.com/@arco-design/web-react@latest/dist/arco.development.js"></script>
+    <script type="module">
+      xport.addEventListener('click', async () => {
+        /* dynamically import the library in the event listener */
+        const XLSX = await import(
+          'https://cdn.sheetjs.com/xlsx-0.18.10/package/xlsx.mjs'
+        );
+
+        const wb = XLSX.utils.book_new();
+        const ws = XLSX.utils.aoa_to_sheet([
+          ['a', 'b', 'c'],
+          [1, 2, 3],
+        ]);
+        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+        XLSX.writeFile(wb, 'SheetJSESMTest.xlsx');
+      });
+    </script>
+  </body>
+</html>
