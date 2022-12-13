@@ -1,0 +1,13 @@
+{
+  "name": "ts-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rm -rf ./dist"
+  },
+  "keywords": [],
+  "author": "ericlee33",
+  "license": "ISC"
+}
