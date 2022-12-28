@@ -1,9 +1,14 @@
 import React, { useMemo, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
 
 function App() {
   const [arr, setArr] = useState({ a: 1 });
+
+  useEffect(() => {
+    throw new Error('123');
+  }, []);
 
   const b = useMemo(() => {
     return arr;
