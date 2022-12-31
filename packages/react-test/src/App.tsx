@@ -7,7 +7,7 @@ function App() {
   const [arr, setArr] = useState({ a: 1 });
 
   useEffect(() => {
-    throw new Error('123');
+    // throw new Error('123');
   }, []);
 
   const b = useMemo(() => {
@@ -27,6 +27,7 @@ function App() {
           })
         }
       >
+        <div className="abcd"></div>
         {/* {b.map((t) => t)} */}
         <img src={logo} className="App-logo" alt="logo" />
 
