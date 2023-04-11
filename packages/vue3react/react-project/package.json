@@ -49,6 +49,8 @@
     "react-dev-utils": "^12.0.1",
     "react-dom": "^18.2.0",
     "react-refresh": "^0.11.0",
+    "react-router": "5.3.4",
+    "react-router-dom": "5.3.4",
     "resolve": "^1.20.0",
     "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.3.0",
@@ -144,6 +146,8 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router": "5.1.18",
+    "@types/react-router-dom": "5.3.3",
     "@types/testing-library__jest-dom": "^5.14.5"
   }
 }

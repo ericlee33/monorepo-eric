@@ -4,14 +4,20 @@ import './index.css';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 import { registerMicroApps, start } from 'qiankun';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/">
+        <App />
+      </Route>
+      <Redirect to="/vue1" />
+    </Switch>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
