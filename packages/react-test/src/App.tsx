@@ -1,48 +1,30 @@
-import React, { useMemo, useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
+import { uniqWith, isEqual, noop } from 'lodash';
+import { useRequest } from 'ahooks';
 
 function App() {
-  const [arr, setArr] = useState({ a: 1 });
+  const [a, setA] = useState(1);
 
-  useEffect(() => {
-    // throw new Error('123');
-  }, []);
+  useRequest(
+    async () => {
+      console.log(1);
+    },
+    {
+      manual: true,
+      refreshDeps: [a],
+    }
+  );
 
-  const b = useMemo(() => {
-    return arr;
-  }, [arr]);
+  const onClick = () => {
+    setA((a) => a + 1);
+  };
 
   return (
     <div className="App">
-      <header
-        className="App-header"
-        onClick={() =>
-          setArr((arr) => {
-            return {
-              ...arr,
-              b: 1,
-            };
-          })
-        }
-      >
-        <div className="abcd"></div>
-        {/* {b.map((t) => t)} */}
-        <img src={logo} className="App-logo" alt="logo" />
-
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div onClick={onClick}>click</div>
     </div>
   );
 }
