@@ -1,0 +1,16 @@
+{
+  "name": "koa-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "李世豪",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.14.2",
+    "mysql": "^2.18.1"
+  }
+}

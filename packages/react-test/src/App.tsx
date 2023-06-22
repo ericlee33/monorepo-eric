@@ -1,32 +1,17 @@
-import React, { useContext, useMemo, useState } from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-import { useEffect } from 'react';
-import { uniqWith, isEqual, noop } from 'lodash';
-import { useRequest } from 'ahooks';
 
-function App() {
-  const [a, setA] = useState(1);
-
-  useRequest(
-    async () => {
-      console.log(1);
-    },
-    {
-      manual: true,
-      refreshDeps: [a],
-    }
-  );
+export default function App() {
+  // [data, method]
+  const [duoshen, setduoshen] = useState('duoshen');
 
   const onClick = () => {
-    setA((a) => a + 1);
+    setduoshen('eric');
   };
 
   return (
     <div className="App">
-      <div onClick={onClick}>click</div>
+      <div onClick={onClick}>{duoshen}</div>
     </div>
   );
 }
-
-export default App;
