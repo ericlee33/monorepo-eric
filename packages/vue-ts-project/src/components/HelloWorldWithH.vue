@@ -140,6 +140,10 @@ export default defineComponent({
 });
 </script>
 
+<!-- 语法糖(换一种写法) -->
+<!-- jsx -> h -->
+
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 h3 {

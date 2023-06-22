@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent, h } from 'vue';
-``;
+
 export default defineComponent({
   name: 'HelloWorld',
   props: {
@@ -14,9 +14,9 @@ export default defineComponent({
   },
   methods: {
     onClickDiv: () => {
-      console.log(1)
-    }
-  }
+      console.log(1);
+    },
+  },
 });
 </script>
 

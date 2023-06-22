@@ -1,5 +1,6 @@
 import { defineComponent } from 'vue';
 import { Table } from 'ant-design-vue';
+import { request } from '@/utils/request';
 
 export default defineComponent({
   name: 'HelloWorld',
@@ -16,7 +17,6 @@ export default defineComponent({
       this.duoshen = 'eric';
     },
   },
-
   render() {
     // return <div>{this.duoshen}</div>;
     // v-for
@@ -24,7 +24,13 @@ export default defineComponent({
     // return this.bool ? this.duoshen : this.eric;
 
     return (
-      <div onClick={this.onClickDiv}>
+      <div 
+        style={{
+          color: '#fff',
+          backgroundColor: '#fff'
+        }}
+        onClick={this.onClickDiv}
+      >
         {this.duoshen}
 
         {this.$slots.default?.()}

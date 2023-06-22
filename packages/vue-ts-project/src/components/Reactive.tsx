@@ -1,5 +1,6 @@
 import { defineComponent, reactive, ref, computed } from 'vue';
 import { Button } from 'ant-design-vue';
+import { request } from '@/utils/request';
 
 // components
 // v-for
@@ -9,12 +10,18 @@ export default defineComponent({
   name: 'HelloWorld',
 
   setup() {
-    // const state = reactive({ count: 0 });
-    const state = ref(0);
+    const state = reactive({ count: 0, res: '' });
 
-    function increment() {
-      state.value.count++;
-    }
+    const increment = async () => {
+      state.count++;
+      const res = await request('/api/hello', {
+        method: 'POST',
+        body: {},
+      });
+      const json = res.json();
+
+      state.res = JSON.stringify(json);
+    };
 
     // const publishedBooksMessage = computed(() => {
     //   return author.books.length > 0 ? 'Yes' : 'No'
@@ -27,7 +34,6 @@ export default defineComponent({
     };
   },
   render() {
-    // return <div onClick={this.increment}>{this.state.count}</div>;
-    return <Button>123</Button>;
+    return <div onClick={this.increment}>{this.state.count}</div>;
   },
 });
