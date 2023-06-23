@@ -65,3 +65,32 @@
 - 单元测试：如何在前端里用 jest 写单元测试
 
 - docker，k8s，compose
+
+## 2023.06.23 提纲
+
+1. esm 和 commonjs 的区别(import / require, export/ module.exports)
+2. 分析了 server.js 全部逻辑
+
+- source-map -> reportMiddleware
+- proxyMiddleware
+- statics
+
+3. CLI
+
+- inquirer -> 交互工具
+- commander -> 支持传参数
+- fs-extra -> 解决 fs promise 兼容性问题 + copyDir 等操作不支持
+- chalk 加颜色的
+- ora 转圈的
+
+4. publish，发包，如何用 typescript 写 node
+
+### 晚间
+
+作业 vue3(tsx 只写一个文件) 语法 + setup（严禁出来任何 data / methods 字段） + koa(mysql + docker(15 分钟) + cors-middlewares)
+
+- todolist 前后端 + mysql
+
+- 使用写一个 templates 复制器， less 复制出来 less,scss 复制出来 scss
+
+- spawn
