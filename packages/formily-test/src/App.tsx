@@ -10,8 +10,8 @@ const App = () => {
     <Card style={{ width: 400 }}>
       {/* <Basic /> */}
       {/* <VoluntaryLinkages /> */}
-      <PasstiveLinkages />
-      {/* <Validate /> */}
+      {/* <PasstiveLinkages /> */}
+      <Validate />
     </Card>
   );
 };

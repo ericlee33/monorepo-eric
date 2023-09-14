@@ -2,13 +2,25 @@
   <div class="hello" @click="onClickDiv">
     <h1>{{ msg }}</h1>
   </div>
+  <Select :options="options" value="12" />
 </template>
 
 <script lang="ts">
 import { defineComponent, h } from 'vue';
+import { Select } from 'ant-design-vue';
 
 export default defineComponent({
   name: 'HelloWorld',
+  data: () => {
+    return {
+      options: [
+        {
+          label: '1232131293219391293219391392193129392139219329',
+          value: 12,
+        },
+      ],
+    };
+  },
   props: {
     msg: String,
   },
@@ -16,6 +28,9 @@ export default defineComponent({
     onClickDiv: () => {
       console.log(1);
     },
+  },
+  components: {
+    Select,
   },
 });
 </script>

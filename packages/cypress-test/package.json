@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^10.3.0"
+  },
+  "dependencies": {
+    "typescript": "^5.1.6"
   }
 }

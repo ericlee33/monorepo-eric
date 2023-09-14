@@ -10,10 +10,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-// import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorldWithH.vue"; // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorldTsx'; // @ is an alias to /src
-import HelloWorld from '@/components/Reactive'; // @ is an alias to /src
+// import HelloWorld from '@/components/Reactive'; // @ is an alias to /src
 
 export default defineComponent({
   name: 'HomeView',
