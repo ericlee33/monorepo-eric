@@ -10,7 +10,7 @@ module.exports = {
   mode: 'development',
   devtool: false,
   resolve: {
-    extensions: ['.js', '.json', '.wasm', '.vue'],
+    extensions: ['.js', '.json', '.wasm', '.vue', '.ts'],
   },
   devServer: {
     static: {
@@ -61,9 +61,9 @@ module.exports = {
         },
       },
       {
-        test: /\.js$/,
-        include: path.resolve(__dirname, './src'),
-        exclude: /node_modules/,
+        test: /\.(j)s$/,
+        // include: path.resolve(__dirname, './src'),
+        // exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },

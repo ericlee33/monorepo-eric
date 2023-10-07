@@ -1,16 +1,20 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((module) => {
+/***/ "../cli-test/src/index.ts":
+/*!********************************!*\
+  !*** ../cli-test/src/index.ts ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-module.exports = {
-  a: 1,
-};
-
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   abc: () => (/* binding */ abc)
+/* harmony export */ });
+const abc = () => {
+  console.log(123)
+}
 
 /***/ })
 
@@ -41,18 +45,6 @@ module.exports = {
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -83,19 +75,24 @@ module.exports = {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
-/*!**************************!*\
-  !*** ./src/reference.js ***!
-  \**************************/
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ "./src/index.js");
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var cli_test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! cli-test */ "../cli-test/src/index.ts");
+// import { createApp } from 'vue';
+// import App from './App.vue';
+// // import router from './router';
+// // import store from './store';
+
+// createApp(App)
+//   // .use(store).use(router).
+//   .mount('#app');
 
 
-console.log((_index__WEBPACK_IMPORTED_MODULE_0___default().a));
-
+(0,cli_test__WEBPACK_IMPORTED_MODULE_0__.abc)();
 })();
 
 /******/ })()
