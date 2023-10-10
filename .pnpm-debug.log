@@ -1,36 +1,15 @@
 {
   "0 debug pnpm:scope": {
     "selected": 1,
-    "workspacePrefix": "/Users/bytedance/Documents/monorepo-eric"
+    "workspacePrefix": "/Users/shuxiaoduo/Documents/ericlee/monorepo-eric"
   },
-  "1 info pnpm": {
+  "1 error pnpm": {
+    "code": "ERR_PNPM_NO_SCRIPT",
     "err": {
       "name": "Error",
-      "message": "Command failed with ENOENT: instlal\nspawn instlal ENOENT",
-      "code": "ENOENT",
-      "stack": "Error: Command failed with ENOENT: instlal\nspawn instlal ENOENT\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:269:19)\n    at onErrorNT (internal/child_process.js:467:16)\n    at processTicksAndRejections (internal/process/task_queues.js:82:21)"
-    }
-  },
-  "2 error pnpm": {
-    "errno": -2,
-    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
-    "syscall": "spawn instlal",
-    "path": "instlal",
-    "spawnargs": [],
-    "originalMessage": "spawn instlal ENOENT",
-    "shortMessage": "Command failed with ENOENT: instlal\nspawn instlal ENOENT",
-    "command": "instlal",
-    "escapedCommand": "instlal",
-    "failed": true,
-    "timedOut": false,
-    "isCanceled": false,
-    "killed": false,
-    "prefix": "/Users/bytedance/Documents/monorepo-eric",
-    "err": {
-      "name": "Error",
-      "message": "Command failed with ENOENT: instlal\nspawn instlal ENOENT",
-      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
-      "stack": "Error: Command failed with ENOENT: instlal\nspawn instlal ENOENT\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:269:19)\n    at onErrorNT (internal/child_process.js:467:16)\n    at processTicksAndRejections (internal/process/task_queues.js:82:21)"
+      "message": "Missing script: create",
+      "code": "ERR_PNPM_NO_SCRIPT",
+      "stack": "Error: Missing script: create\n    at Object.handler (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:120726:15)\n    at async Timeout._onTimeout (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:124690:24)"
     }
   }
 }
