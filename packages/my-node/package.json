@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "李世豪",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "diff": "^5.1.0"
+  }
 }
