@@ -19,8 +19,7 @@
     "fs-extra": "7.0.0",
     "inquirer": "7.3.3",
     "ora": "^4",
-    "semver": "^7.3.5",
-    "utils-test": "workspace:*"
+    "semver": "^7.3.5"
   },
   "devDependencies": {
     "typescript": "^5.1.3"
