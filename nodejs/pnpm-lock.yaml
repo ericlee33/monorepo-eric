@@ -67,8 +67,11 @@ importers:
   packages/my-node:
     specifiers:
       diff: ^5.1.0
+      typescript: ^5.2.2
     dependencies:
       diff: 5.1.0
+    devDependencies:
+      typescript: 5.2.2
 
   packages/nest:
     specifiers:

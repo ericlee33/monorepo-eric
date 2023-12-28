@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "diff": "^5.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
   }
 }
