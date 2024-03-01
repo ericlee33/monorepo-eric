@@ -1,12 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [count, setCount] = useState(0);
   return (
     <div className="App">
+      <button
+        onClick={() => {
+          setCount((count) => count + 1);
+        }}
+      >
+        add count
+      </button>
+      count: {count}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
