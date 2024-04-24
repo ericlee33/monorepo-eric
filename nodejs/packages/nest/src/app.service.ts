@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, HttpCode, HttpStatus } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
@@ -11,11 +11,17 @@ export class AppService {
     //     },
     //   ],
     // };
-    return {
-      code: 200,
-      data: {
-        abc: params.abc === '1' ? 'abc' : 'bcd',
-      },
-    };
+    // return res.status(400).send('Bad Request');
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        return resolve({
+          code: 200,
+          data: {
+            abc: params.abc === '1' ? 'abc' : 'bcd',
+          },
+        });
+      }, 500);
+    });
   }
 }

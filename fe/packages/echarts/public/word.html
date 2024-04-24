@@ -20,10 +20,26 @@
     <script>
       var chart = echarts.init(document.getElementById('main'));
 
-      var keywords = {
-        测试: 1700,
-        测试2: 1700,
-      };
+      const source = `- 外部依赖
+- 全局状态管理
+- DSL 协议解析器
+- 远程模块加载器
+- 数据源构造器
+- 编辑器
+- 渲染器
+- 设置器
+- 内置物料`
+        .replace(/-\s/g, '')
+        .split('\n');
+      const keywords = source.reduce((obj, key) => {
+        obj[key] = 1700 * Math.random() * 2;
+        return obj;
+      }, {});
+
+      // var keywords = {
+      //   测试: 1700,
+      //   测试2: 1700,
+      // };
 
       var data = [];
       for (var name in keywords) {
