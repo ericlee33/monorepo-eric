@@ -17,9 +17,15 @@ export class AppService {
       setTimeout(() => {
         return resolve({
           code: 200,
-          data: {
-            abc: params.abc === '1' ? 'abc' : 'bcd',
-          },
+          // data: {
+          //   abc: params.abc === '1' ? 'abc' : 'bcd',
+          // },
+          data: [
+            {
+              label: '123',
+              value: '32',
+            },
+          ],
         });
       }, 500);
     });

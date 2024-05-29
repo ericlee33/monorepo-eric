@@ -9,13 +9,16 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/api/hello')
+      .get('http://localhost:3000/api/hello', {
+        abc: 1,
+      })
       .then((res) => {
         console.log(res, 1);
-      })
-      .catch((err) => {
-        console.log(err, 4);
+        return Promise.reject();
       });
+    // .catch((err) => {
+    //   console.log(err, 4);
+    // });
   }, []);
 
   return (

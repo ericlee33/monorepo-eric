@@ -1,4 +1,4 @@
-import { Query, Controller, Get, Post } from '@nestjs/common';
+import { Query, Controller, Get, Post, HttpCode } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -6,6 +6,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('/api/hello')
+  // @HttpCode(400)
   getHello(@Query() query) {
     return this.appService.getHello(query);
   }

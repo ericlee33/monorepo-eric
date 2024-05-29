@@ -1,15 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React, {
+  useEffect,
+  useMemo,
+  useState,
+  useRef,
+  useImperativeHandle,
+  createContext,
+} from 'react';
 import './App.css';
-
-const Son = (props) => {
-  return <div ref={props.abc}>123</div>;
-};
 
 function App() {
   const [count, setCount] = useState(0);
+  const [count1, setCount1] = useState(0);
+
+  const a = useMemo(() => {
+    return count + 1;
+  }, [count]);
+
+  const b = useMemo(() => {
+    return count1 + 1;
+  }, [count1]);
+
+  const c = useMemo(() => {
+    return {
+      a,
+      b,
+    };
+  }, [a, b]);
+
   useEffect(() => {
-    // throw 123;
-  }, []);
+    console.log('333');
+  }, [c.b]);
+
   return (
     <div className="App">
       <button
@@ -19,20 +40,15 @@ function App() {
       >
         add count
       </button>
+      <button
+        onClick={() => {
+          setCount1((count) => count + 1);
+        }}
+      >
+        add count1
+      </button>
       count: {count}
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      count: {count1}
     </div>
   );
 }
